@@ -23,7 +23,7 @@ class PhpGnokiiTest extends TestCase
 		$this->expectException(Exception::class);
 		$this->expectExceptionCode(EXCEPTION_INVALID_SMSC_NUMBER);
 		$sender = new PhpGnokii();
-	    } //end testShouldNotAllowCreateSenderWithoutSmscNumber
+	    } //end testShouldNotAllowCreateSenderWithoutSmscNumber()
 
 
 	/**

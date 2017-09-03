@@ -13,7 +13,8 @@
     ],
     "autoload" : {
         "psr-4" : {
-            "AM\\SMS\\": ["src"]
+            "AM\\SMS\\": ["src"],
+            "AM\\Gnokii\\": ["src"]
         },
         "classmap": [
             "src"
