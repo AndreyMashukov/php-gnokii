@@ -76,13 +76,22 @@ class PhpGnokii
 	 * @param string $message Message to send
 	 *
 	 * @return bool Send result
+	 *
+	 * @throws Exception Gnokii command is not set
+	 *
+	 * @exceptioncode EXCEPTION_GNOKII_COMMAND_IS_NOT_SET
 	 */
 
 	public function send(string $phone, string $message):bool
 	    {
+		if (defined("GNOKII_COMMAND") === false)
+		    {
+			throw new Exception("Gnokii command is not set", EXCEPTION_GNOKII_COMMAND_IS_NOT_SET);
+		    } //end if
+
 		if ($this->_validatePhoneNumber($phone) === true)
 		    {
-			exec("echo '" . $message . "' | gnokii --sendsms '" . $phone . "' --smsc '" . $this->_smsc . "'", $output, $result);
+			exec("echo '" . $message . "' | " . GNOKII_COMMAND . " --sendsms '" . $phone . "' --smsc '" . $this->_smsc . "'", $output, $result);
 			if ($result === 0)
 			    {
 				return true;
