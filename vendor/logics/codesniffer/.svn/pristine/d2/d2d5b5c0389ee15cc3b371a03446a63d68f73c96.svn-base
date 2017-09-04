@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * PHP version 5
+ *
+ * @package Logics\Tests\BuildTools\CodeSniffer
+ */
+
+namespace Logics\Tests\BuildTools\CodeSniffer;
+
+use \Logics\BuildTools\CodeSniffer\FullReport;
+
+/**
+ * Tests for the Full report of CodeSniffer.
+ *
+ * @author    Gabriele Santini <gsantini@sqli.com>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Vladimir Bashkirtsev <vladimir@bashkirtsev.com>
+ * @copyright 2009 SQLI <www.sqli.com>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @copyright 2013-2016 Vladimir Bashkirtsev
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   SVN: $Date$ $Revision$
+ * @link      $HeadURL$
+ *
+ * @donottranslate
+ */
+
+class FullTest extends AbstractTestCase
+    {
+
+	/**
+	 * Test standard report.
+	 *
+	 * @return void
+	 */
+
+	public function testGenerate()
+	    {
+		$fullReport = new FullReport();
+		$generated  = $this->getFixtureReport($fullReport);
+		$this->checkLineLength($generated, 80);
+	    } //end testGenerate()
+
+
+    } //end class
+
+?>

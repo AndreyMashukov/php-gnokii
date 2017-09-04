@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<ruleset name="Beauty">
+ <description>The Beauty coding standard.</description>
+
+ <rule ref="Generic">
+  <exclude name="Generic.Arrays.DisallowLongArraySyntax"/>
+  <exclude name="Generic.Files.EndFileNoNewline"/>
+  <exclude name="Generic.Files.LowercasedFilename"/>
+  <exclude name="Generic.Formatting.NoSpaceAfterCast"/>
+  <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+  <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+  <exclude name="Generic.NamingConventions.CamelCapsFunctionName"/>
+  <exclude name="Generic.NamingConventions.ConstructorName"/>
+  <exclude name="Generic.PHP.UpperCaseConstant"/>
+  <exclude name="Generic.Strings.UnnecessaryStringConcat"/>
+  <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+  <exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
+  <exclude name="Generic.WhiteSpace.ScopeIndent"/>
+  <exclude name="Generic.Debug.ClosureLinter"/>
+ </rule>
+
+ <rule ref="PEAR">
+  <exclude name="PEAR.Classes.ClassDeclaration"/>
+  <exclude name="PEAR.Commenting.FunctionComment"/>
+  <exclude name="PEAR.Commenting.ClassComment"/>
+  <exclude name="PEAR.Commenting.FileComment"/>
+  <exclude name="PEAR.ControlStructures.ControlSignature"/>
+  <exclude name="PEAR.ControlStructures.MultiLineCondition"/>
+  <exclude name="PEAR.Functions.FunctionCallSignature"/>
+  <exclude name="PEAR.Functions.FunctionDeclaration"/>
+  <exclude name="PEAR.WhiteSpace.ScopeClosingBrace"/>
+  <exclude name="PEAR.WhiteSpace.ScopeIndent"/>
+ </rule>
+
+ <rule ref="Squiz">
+  <exclude name="Squiz.Classes.ClassDeclaration"/>
+  <exclude name="Squiz.Classes.ValidClassName"/>
+  <exclude name="Squiz.Commenting.ClassComment"/>
+  <exclude name="Squiz.Commenting.ClosingDeclarationComment"/>
+  <exclude name="Squiz.Commenting.FileComment"/>
+  <exclude name="Squiz.Commenting.FunctionComment"/>
+  <exclude name="Squiz.Commenting.LongConditionClosingComment"/>
+  <exclude name="Squiz.Commenting.VariableComment"/>
+  <exclude name="Squiz.ControlStructures.ControlSignature"/>
+  <exclude name="Squiz.ControlStructures.SwitchDeclaration"/>
+  <exclude name="Squiz.Files.FileExtension"/>
+  <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+  <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
+  <exclude name="Squiz.NamingConventions.ConstantCase"/>
+  <exclude name="Squiz.NamingConventions.ValidFunctionName"/>
+  <exclude name="Squiz.NamingConventions.ValidVariableName"/>
+  <exclude name="Squiz.PHP.DisallowBooleanStatement"/>
+  <exclude name="Squiz.PHP.DisallowComparisonAssignment"/>
+  <exclude name="Squiz.PHP.DisallowInlineIf"/>
+  <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace"/>
+  <exclude name="Squiz.WhiteSpace.ScopeClosingBrace"/>
+  <exclude name="Squiz.Strings.ConcatenationSpacing"/>
+  <exclude name="Squiz.Strings.DoubleQuoteUsage"/>
+ </rule>
+
+ <!-- Lines can be 177 chars long, but never show errors -->
+ <rule ref="Generic.Files.LineLength">
+  <properties>
+   <property name="lineLimit" value="177"/>
+   <property name="absoluteLineLimit" value="177"/>
+  </properties>
+ </rule>
+
+ <!-- Have 24 chars padding maximum and always show as errors -->
+ <rule ref="Generic.Formatting.MultipleStatementAlignment">
+  <properties>
+   <property name="maxPadding" value="24"/>
+   <property name="ignoreMultiLine" value="true"/>
+   <property name="error" value="true"/>
+  </properties>
+ </rule>
+
+</ruleset>

@@ -1,0 +1,12 @@
+<?php
+class Test
+    {
+        public function test(){}
+
+        public function test();
+
+    	    public function test();
+    }
+
+echo "111" 	. "222";
+?>

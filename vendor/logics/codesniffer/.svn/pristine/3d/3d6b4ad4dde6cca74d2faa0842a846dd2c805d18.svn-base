@@ -1,0 +1,12 @@
+<?php
+
+if ($a === true)
+    {
+	return true;
+    }
+else
+    {
+	return true;
+    }
+
+?>

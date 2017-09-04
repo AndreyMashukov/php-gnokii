@@ -1,0 +1,41 @@
+<?php
+
+use \Vendor\Namespace\FirstObject;
+use \Vendor\Namespace\SecondObject;
+use \Vendor\Namespace\ThirdObject as UsedObject;
+use \Vendor\Namespace\FourthObject as UnusedObject;
+use \Vendor\Namespace\FifthObject;
+use \Vendor\Namespace\SixthObject;
+use \Vendor\Namespace\SeventhObject;
+
+class Test
+    {
+
+	use Trait;
+
+	public function method(FifthObject $obj)
+	    {
+		$tmp = new FirstObject();
+		$tmp = new UsedObject();
+
+		$example = function () use ($message)
+		    {
+			var_dump($message);
+		    };
+
+		if ($tmp instanceof SixthObject === true)
+		    {
+			var_dump($tmp);
+		    }
+
+		try
+		    {
+		    }
+		catch (SeventhObject $e)
+		    {
+		    }
+	    }
+
+    }
+
+?>

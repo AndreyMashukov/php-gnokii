@@ -1,0 +1,8 @@
+<?php
+
+dirname(__FILE__);
+
+$file = __FILE__;
+
+
+?>

@@ -1,0 +1,36 @@
+This is utility introduction
+
+USAGE:
+
+  script <OPTIONS> <first> [<second>, ...]
+
+   Utility help
+
+  OPTIONS:
+   -a                     Flag
+   -v                     Cumulative option
+   -o <value>, --optional Optional option with default value
+   <value>
+   -m, --multiple         Multiple value option
+
+  ARGUMENTS:
+   <first>  Mandatory argument
+   <second> Multiple arguments
+
+    SUBCOMMAND:
+
+    script <OPTIONS> <first> [<second>, ...] subcommand <OPTIONS> <thrid> [<fourth>] [<fifth>]
+
+     Sub-command
+
+    OPTIONS:
+     -q                     Cumulative option
+     -n <value>, --new      Optional option with default value
+     <value>
+     -r, --repeat           Multiple value option
+
+    ARGUMENTS:
+     <thrid>  Mandatory argument
+     <fourth> Optional argument
+     <fifth>  Optional argument
+

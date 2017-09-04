@@ -1,0 +1,35 @@
+<?php
+
+class VariableCommentUnitTest
+    {
+	/**
+	 * Test short vs long
+	 *
+	 * @var integer
+	 */
+	 public $a;
+
+	/**
+	 * Test short vs long
+	 *
+	 * @var int
+	 */
+	 public $b;
+
+	/**
+	 * Test short vs long
+	 *
+	 * @var boolean
+	 */
+	 public $c;
+
+	/**
+	 * Test short vs long
+	 *
+	 * @var bool
+	 */
+	 public $d;
+
+    } //end class
+
+?>

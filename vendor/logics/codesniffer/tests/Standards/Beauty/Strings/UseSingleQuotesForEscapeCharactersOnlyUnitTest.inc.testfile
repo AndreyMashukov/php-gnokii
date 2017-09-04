@@ -1,0 +1,10 @@
+<?php
+
+$a = 'Test';
+$b = '$a';
+$c = "100";
+
+echo 'Test';
+$foo = ($bar === true ? 'yes' : 'no');
+
+?>

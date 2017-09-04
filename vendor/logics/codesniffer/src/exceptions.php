@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * PHP version 5.6
+ *
+ * @package   Manifest
+ * @author    Config Generator <jenkins@svn.logics.net.au>
+ * @copyright 2013-2016 Vladimir Bashkirtsev
+ * @license   https://opensource.org/licenses/MIT MIT License
+ * @version   SVN: $Date: 2016-09-04 03:55:34 +0900 (Sun, 04 Sep 2016) $ $Revision: 41 $
+ * @link      $HeadURL: https://open.logics.net.au/buildtools/codesniffer/tags/0.1.3/src/exceptions.php $
+ */
+
+/**
+ * Automatically generated file, do not modify
+ *
+ * @donottranslate
+ */
+
+(defined("EXCEPTION_MUST_BE_A_STRING") === true) ? : define("EXCEPTION_MUST_BE_A_STRING", 1);
+(defined("EXCEPTION_INVALID_RULESET") === true) ? : define("EXCEPTION_INVALID_RULESET", 2);
+(defined("EXCEPTION_NO_SNIFF_CLASS") === true) ? : define("EXCEPTION_NO_SNIFF_CLASS", 3);
+(defined("EXCEPTION_SNIFF_DOES_NOT_EXIST") === true) ? : define("EXCEPTION_SNIFF_DOES_NOT_EXIST", 4);
+(defined("EXCEPTION_CLASS_NOT_FOUND") === true) ? : define("EXCEPTION_CLASS_NOT_FOUND", 5);
+(defined("EXCEPTION_SNIFF_REGISTRATION_SHOULD_PROVIDE_ARRAY") === true) ? : define("EXCEPTION_SNIFF_REGISTRATION_SHOULD_PROVIDE_ARRAY", 6);
+(defined("EXCEPTION_NO_SOURCE_FILE") === true) ? : define("EXCEPTION_NO_SOURCE_FILE", 7);
+(defined("EXCEPTION_CONFIG_IS_NOT_WRITEABLE") === true) ? : define("EXCEPTION_CONFIG_IS_NOT_WRITEABLE", 8);
+(defined("EXCEPTION_UNREADABLE_FILE") === true) ? : define("EXCEPTION_UNREADABLE_FILE", 9);
+(defined("EXCEPTION_CANNOT_DETECT_LINE_ENDINGS") === true) ? : define("EXCEPTION_CANNOT_DETECT_LINE_ENDINGS", 10);
+(defined("EXCEPTION_MINIFIED_FILE_ENCOUNTERED") === true) ? : define("EXCEPTION_MINIFIED_FILE_ENCOUNTERED", 11);
+(defined("EXCEPTION_MAXIMUM_NESTING_LEVEL_REACHED") === true) ? : define("EXCEPTION_MAXIMUM_NESTING_LEVEL_REACHED", 12);
+(defined("EXCEPTION_TOKEN_TYPE_IS_INCORRECT") === true) ? : define("EXCEPTION_TOKEN_TYPE_IS_INCORRECT", 13);
+(defined("EXCEPTION_TOKEN_TYPE_IS_NOT_T_FUNCTION") === true) ? : define("EXCEPTION_TOKEN_TYPE_IS_NOT_T_FUNCTION", 14);
+(defined("EXCEPTION_STACKPTR_MUST_BE_T_FUNCTION") === true) ? : define("EXCEPTION_STACKPTR_MUST_BE_T_FUNCTION", 15);
+(defined("EXCEPTION_STACKPTR_MUST_BE_T_VARIABLE") === true) ? : define("EXCEPTION_STACKPTR_MUST_BE_T_VARIABLE", 16);
+(defined("EXCEPTION_STACKPTR_IS_NOT_CLASS_MEMBER_VAR") === true) ? : define("EXCEPTION_STACKPTR_IS_NOT_CLASS_MEMBER_VAR", 17);
+(defined("EXCEPTION_STACKPTR_MUST_BE_T_CLASS") === true) ? : define("EXCEPTION_STACKPTR_MUST_BE_T_CLASS", 18);
+(defined("EXCEPTION_REPORT_TYPE_NOT_FOUND") === true) ? : define("EXCEPTION_REPORT_TYPE_NOT_FOUND", 19);
+(defined("EXCEPTION_CLASS_DOES_NOT_IMPLEMENT_REPORTING_INTERFACE") === true) ? : define("EXCEPTION_CLASS_DOES_NOT_IMPLEMENT_REPORTING_INTERFACE", 20);
+(defined("EXCEPTION_NO_TOKEN_TO_LISTEN_FOR") === true) ? : define("EXCEPTION_NO_TOKEN_TO_LISTEN_FOR", 21);
+(defined("EXCEPTION_WRONG_PATTERN") === true) ? : define("EXCEPTION_WRONG_PATTERN", 22);
+(defined("EXCEPTION_PATTERN_NOT_FOR_THIS_CODE") === true) ? : define("EXCEPTION_PATTERN_NOT_FOR_THIS_CODE", 23);
+(defined("EXCEPTION_SCOPE_TOKENS_LIST_IS_EMPTY") === true) ? : define("EXCEPTION_SCOPE_TOKENS_LIST_IS_EMPTY", 24);
+(defined("EXCEPTION_TOKENS_LIST_IS_EMPTY") === true) ? : define("EXCEPTION_TOKENS_LIST_IS_EMPTY", 25);
+(defined("EXCEPTION_INVALID_SCOPE_TOKENS") === true) ? : define("EXCEPTION_INVALID_SCOPE_TOKENS", 26);
+(defined("EXCEPTION_TAB_WIDTH_CANNOT_BE_ZERO") === true) ? : define("EXCEPTION_TAB_WIDTH_CANNOT_BE_ZERO", 27);
+(defined("EXCEPTION_CANNOT_OPEN_FILE") === true) ? : define("EXCEPTION_CANNOT_OPEN_FILE", 28);
+(defined("EXCEPTION_JAVASCRIPTLINT_INVOCATION_FAILURE") === true) ? : define("EXCEPTION_JAVASCRIPTLINT_INVOCATION_FAILURE", 29);
+(defined("EXCEPTION_ZENDCODEANALYZER_INVOCATION_FAILURE") === true) ? : define("EXCEPTION_ZENDCODEANALYZER_INVOCATION_FAILURE", 30);
+(defined("EXCEPTION_UNEXPECTED_FILENAME") === true) ? : define("EXCEPTION_UNEXPECTED_FILENAME", 31);
+(defined("EXCEPTION_GETERRORLIST_MUST_RETURN_ARRAY") === true) ? : define("EXCEPTION_GETERRORLIST_MUST_RETURN_ARRAY", 32);
+(defined("EXCEPTION_GETWARNINGLIST_MUST_RETURN_ARRAY") === true) ? : define("EXCEPTION_GETWARNINGLIST_MUST_RETURN_ARRAY", 33);
+
+?>

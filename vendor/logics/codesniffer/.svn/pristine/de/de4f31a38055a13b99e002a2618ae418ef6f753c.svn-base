@@ -1,0 +1,18 @@
+<?php
+
+class MyClass {}
+
+class BadClass
+
+    {
+    }
+
+class NewClass
+    {}
+
+class AnotherClass
+	{
+	    $somecode = false;
+	}
+
+?>

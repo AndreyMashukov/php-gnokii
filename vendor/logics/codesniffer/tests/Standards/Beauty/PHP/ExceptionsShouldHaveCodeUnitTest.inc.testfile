@@ -1,0 +1,45 @@
+<?php
+
+$e = new Exception("test");    //should fail
+$e = new Exception(_("test")); //should fail
+
+$e = new Exception("test" . function::($a, $b) . 123);  //should fail
+$e = new Exception(_("test"), $code); //should not fail
+$e = new Exception("test", $code);    //should not fail
+$e = new Exception("test", CODE);     //should not fail
+$e = new Exception("test" . function::($a, $b), 0);        //should not fail
+
+try
+    {
+	$a = 0;
+    }
+catch (Exception $e)
+    {
+	$a = $e->getMessage(); //should not fail
+
+	if ($e->getMessage() === "test") // should fail
+	    {
+	    }
+
+	if ($e->getMessage() !== "test") // should fail
+	    {
+	    }
+    }
+
+set_error_handler(function($errno, $errstr, $errfile, $errline, array $errcontext)
+    {
+	if (preg_match("/DOMDocument::schemaValidate\(\): Invalid Schema/", $errstr) > 0)
+	    {
+		$exceptiontext = _("Invalid schema was provided");
+		if ($this->getXMLerrors() !== false)
+		    {
+			$exceptiontext .= _(", encountered errors:") . " " . $this->getXMLerrors();
+		    }
+
+		$this->clearXMLerrors();
+		restore_error_handler();
+		throw new Exception($exceptiontext, EXCEPTION_INVALID_SCHEMA);
+	    }
+    }, E_WARNING);
+
+?>

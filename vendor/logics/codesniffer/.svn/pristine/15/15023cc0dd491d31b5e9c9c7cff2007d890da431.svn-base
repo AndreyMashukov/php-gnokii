@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * PHP version 5
+ *
+ * @package Logics\Tests\BuildTools\CodeSniffer\Beauty
+ */
+
+/**
+ * Test class for special files
+ *
+ * @author    Vladimir Bashkirtsev <vladimir@bashkirtsev.com>
+ * @copyright 2013-2016 Vladimir Bashkirtsev
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   SVN: $Date$ $Revision$
+ * @link      $HeadURL$
+ */
+
+class RequestValidator
+    {
+
+	/**
+	 * Test function
+	 *
+	 * @return void
+	 */
+
+	public function test()
+	    {
+		$test = 0;
+		$_GET = array();
+		$test = $test;
+	    } //end test()
+
+
+    } //end class
+
+?>

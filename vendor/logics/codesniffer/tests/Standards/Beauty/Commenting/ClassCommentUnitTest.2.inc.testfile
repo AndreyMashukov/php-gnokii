@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Class comment
+ */
+
+class testClassComment
+    {
+    }
+
+// Wrong style comment
+
+class testWrongStyle
+    {
+    }
+
+/**
+ * Test no blank line
+ */
+class testNoBlankLine
+    {
+    }
+
+
+/**
+ * Test extra blank lines before comment
+ */
+
+class testExtraBlankLinesBeforeComment
+    {
+    }
+
+class testWithoutClassComment
+    {
+    }
+
+?>

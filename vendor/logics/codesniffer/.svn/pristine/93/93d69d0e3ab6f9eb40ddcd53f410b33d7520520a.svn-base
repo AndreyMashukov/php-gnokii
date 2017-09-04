@@ -1,0 +1,22 @@
+<?php
+
+class Test extends Foo
+    {
+
+	public function Test()
+	    {
+		parent::Foo();
+	    }
+    }
+
+class Test
+    {
+	public function __costruct()
+	    {
+	    }
+    }
+
+class Test
+    {
+    }
+?>

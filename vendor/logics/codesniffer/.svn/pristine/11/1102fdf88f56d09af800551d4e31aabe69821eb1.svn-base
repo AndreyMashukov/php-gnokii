@@ -1,0 +1,9 @@
+<?php
+
+// File comment
+
+class testWithoutClassComment
+    {
+    }
+
+?>

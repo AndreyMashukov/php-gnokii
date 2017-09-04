@@ -250,12 +250,13 @@ class PhpGnokii
 		foreach ($messages as $message)
 		    {
 			$part = $this->_createSms($message, $memorytype);
-			$sms["datetime"]  = $part["datetime"];
 			$sms["text"]     .= $part["text"];
-			$sms["memory"]    = $part["memory"];
-			$sms["sender"]    = $part["sender"];
-			$sms["multipart"] = $part["multipart"];
-			$sms["read"]      = $part["read"];
+			unset($part["text"]);
+			foreach ($part as $key => $value)
+			    {
+				$sms[$key] = $value;
+			    } //end foreach
+
 		    } //end foreach
 
 		return $sms;
@@ -331,6 +332,7 @@ class PhpGnokii
 
 		return $slots;
 	    } //end _getSlots()
+
 
     } //end class
 

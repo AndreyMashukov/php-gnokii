@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * PHP version 5
+ *
+ * @package Logics\Tests\BuildTools\CodeSniffer\PSR2
+ */
+
+namespace Logics\Tests\BuildTools\CodeSniffer\PSR2;
+
+use \Logics\Tests\BuildTools\CodeSniffer\AbstractSniffUnitTest;
+
+/**
+ * Unit test class for the EndFileNewline sniff.
+ *
+ * A sniff unit test checks a .inc file for expected violations of a single
+ * coding standard. Expected errors and warnings are stored in this class.
+ *
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Vladimir Bashkirtsev <vladimir@bashkirtsev.com>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @copyright 2013-2016 Vladimir Bashkirtsev
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   SVN: $Date$ $Revision$
+ * @link      $HeadURL$
+ */
+
+class EndFileNewlineUnitTest extends AbstractSniffUnitTest
+    {
+
+	/**
+	 * This functions set expectations from test case files in form of an array
+	 *
+	 * @return array Expectations of errors and warnings
+	 */
+
+	protected function expectations()
+	    {
+		return array(
+			"EndFileNewlineUnitTest.1.inc.testfile" => array("errors" => array(2 => 1)),
+			"EndFileNewlineUnitTest.3.inc.testfile" => array("errors" => array(2 => 1)),
+			"EndFileNewlineUnitTest.6.inc.testfile" => array("errors" => array(2 => 1)),
+			"EndFileNewlineUnitTest.7.inc.testfile" => array("errors" => array(2 => 1)),
+		       );
+	    } //end expectations()
+
+
+    } //end class
+
+?>
