@@ -67,6 +67,27 @@ class PhpGnokiiTest extends TestCase
 	    } //end testShouldNotAllowToSendSmsIfGnokiiCommandIsNotDefined()
 
 
+	/**
+	 * Should allow to add gnokii config file path
+	 *
+	 * @return void
+	 *
+	 * @exceptioncode EXCEPTION_INVALID_CONFIG_FILE
+	 */
+
+	public function testShouldAllowToAddGnokiiConfigFilePath()
+	    {
+		$sender = new PhpGnokii("+79998887766", "+7", __DIR__ . "/datasets/valid.config");
+		define("GNOKII_COMMAND", "sh " . __DIR__ . "/mock/mock.sh");
+		$this->assertTrue($sender->send("+79526191914", "test"));
+
+		define("EXCEPTION_INVALID_CONFIG_FILE", 1);
+		$this->expectException(Exception::class);
+		$this->expectExceptionCode(EXCEPTION_INVALID_CONFIG_FILE);
+		$sender = new PhpGnokii("+79998887766", "+7", __DIR__ . "/datasets/invalid.config");
+	    } //end testShouldAllowToAddGnokiiConfigFilePath()
+
+
     } //end class
 
 ?>
