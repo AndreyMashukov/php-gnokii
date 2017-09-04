@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="externalschemas/www.sitemaps.org/0.9/sitemap.xsd"/>
-  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="externalschemas/www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
-</xs:schema>

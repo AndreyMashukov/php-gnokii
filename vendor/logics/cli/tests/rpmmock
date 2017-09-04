@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = "-q" ]; then
-    exit 1;
-fi

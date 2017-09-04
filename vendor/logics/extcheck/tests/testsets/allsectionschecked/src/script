@@ -1,8 +1,0 @@
-#!/usr/bin/php
-<?php
-
-$b = gettext($e);
-
-$b = class_implements($e);
-
-?>

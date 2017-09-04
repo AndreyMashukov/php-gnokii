@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-  <uri name="http://www.w3.org/2001/xml.xsd" uri="externalschemas/www.w3.org/2001/xml.xsd"/>
-  <uri name="http://www.w3.org/2001/03/xml.xsd" uri="externalschemas/www.w3.org/2001/03/xml.xsd"/>
-  <uri name="http://www.dublincore.org/schemas/xmls/qdc/dc.xsd" uri="externalschemas/www.dublincore.org/schemas/xmls/qdc/dc.xsd"/>
-  <uri name="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" uri="externalschemas/www.sitemaps.org/0.9/sitemap.xsd"/>
-  <uri name="http://www.sitemaps.org/schemas/siteindex/0.9/sitemap.xsd" uri="externalschemas/www.sitemaps.org/0.9/siteindex.xsd"/>
-</catalog>

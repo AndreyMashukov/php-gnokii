@@ -1,7 +1,0 @@
-<?php
-
-$a = 100;
-$b = "Test $b";
-
-echo 'Test $b';
-?>

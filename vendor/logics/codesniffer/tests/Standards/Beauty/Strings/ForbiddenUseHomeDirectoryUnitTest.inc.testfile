@@ -1,9 +1,0 @@
-<?php
-
-$b = "home/anatasia/3";
-
-$a = "../home/anastasia/3";
-
-file_put_contents("/home/anastasia/3");
-
-?>

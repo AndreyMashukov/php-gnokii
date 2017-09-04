@@ -1,9 +1,0 @@
-<?php
-
-namespace \Test\Namespace;
-
-class Test
-    {
-    }
-
-?>

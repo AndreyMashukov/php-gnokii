@@ -1,9 +1,0 @@
-<?php
-
-declare(tick=1);
-
-// vim:vimheader
-
-// Wrong style comment
-
-?>

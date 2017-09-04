@@ -1,8 +1,0 @@
-<?php
-
-$a = "100" . "200";
-$b = "Test"."Test";
-$c = "Test" ."Test";
-$d = "Test". "Test";
-
-?>
