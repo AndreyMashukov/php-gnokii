@@ -118,7 +118,18 @@ class PhpGnokiiTest extends TestCase
 		define("SMSC_NUMBER", "+79043490000");
 
 		$phpgnokii = new PhpGnokii();
-		$expected = [
+
+		$expected   = [];
+		$expected[] = [
+		    "datetime"  => new DateTime("02/09/2017 08:40:07 +0300"),
+		    "text"      => "You balance is 200$",
+		    "memory"    => ["type" => "ME", "slots" => [0]],
+		    "sender"    => "Provider",
+		    "multipart" => false,
+		    "read"      => true,
+		];
+
+		$expected[] = [
 		    "datetime"  => new DateTime("04/09/2017 14:17:31 +0700"),
 		    "text"      => "Message part in first message and second part of message",
 		    "memory"    => ["type" => "ME", "slots" => [8, 9]],
@@ -128,7 +139,7 @@ class PhpGnokiiTest extends TestCase
 		];
 
 		$messages = $phpgnokii->getSms("ME");
-		$this->assertEquals(array($expected), $messages);
+		$this->assertEquals($expected, $messages);
 		define("EXCEPTION_INVALID_MEMORY_TYPE", 1);
 		$this->expectException(Exception::class);
 		$this->expectExceptionCode(EXCEPTION_INVALID_MEMORY_TYPE);

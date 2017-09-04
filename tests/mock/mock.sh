@@ -8,6 +8,15 @@ then
 echo Send succeeded with reference -1!
 elif [ "$3" = "--getsms" ]
 then
+    if [ "$5" = "0" ]
+    then
+	echo 0. Inbox Message \(Read\)
+	echo Date/time: 02/09/2017 08:40:07 +0300
+	echo Sender: Provider Msg Center: +79043490004
+	echo Text:
+	echo You balance is 200\$
+	exit 0
+    fi
     if [ "$5" = "8" ]
     then
 	echo 8. Inbox Message \(Unread\)

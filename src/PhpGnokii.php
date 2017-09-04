@@ -190,7 +190,9 @@ class PhpGnokii
 
 	public function getSms(string $memorytype, int $count = 30):array
 	    {
-		$types = ["SM", "ME", "MT", "BM", "SR"];
+		$smsarray = [];
+		$types    = ["SM", "ME", "MT", "BM", "SR"];
+
 		if (in_array($memorytype, $types) === true)
 		    {
 			for ($i = 0; $i <= $count; $i++)
@@ -208,14 +210,13 @@ class PhpGnokii
 							$messages[] = $this->_getMessage($memorytype, $slot);
 						    } //end foreach
 
-						print_r($messages);
-
-						// function for make miltisms
-
+						$sms        = $this->_combineMessages($messages, $memorytype);
+						$smsarray[] = $sms;
 					    }
-					else
+					else if ($message["linked"] === false)
 					    {
-						$sms = $this->_createSms($message, $memorytype);
+						$sms        = $this->_createSms($message, $memorytype);
+						$smsarray[] = $sms;
 					    } //end if
 
 				    } //end if
@@ -228,8 +229,37 @@ class PhpGnokii
 			throw new Exception("Invalid memory type", EXCEPTION_INVALID_MEMORY_TYPE);
 		    } //end if
 
-		return [];
+		return $smsarray;
 	    } //end if
+
+
+	/**
+	 * Combine messages
+	 *
+	 * @param array  $messages   Messages to combine
+	 * @param string $memorytype Memory type of device
+	 *
+	 * @return array Sms
+	 */
+
+	private function _combineMessages(array $messages, string $memorytype):array
+	    {
+		$sms = $this->_createSms($messages[0], $memorytype);
+		unset($messages[0]);
+
+		foreach ($messages as $message)
+		    {
+			$part = $this->_createSms($message, $memorytype);
+			$sms["datetime"]  = $part["datetime"];
+			$sms["text"]     .= $part["text"];
+			$sms["memory"]    = $part["memory"];
+			$sms["sender"]    = $part["sender"];
+			$sms["multipart"] = $part["multipart"];
+			$sms["read"]      = $part["read"];
+		    } //end foreach
+
+		return $sms;
+	    } //end _combineMessages()
 
 
 	/**
