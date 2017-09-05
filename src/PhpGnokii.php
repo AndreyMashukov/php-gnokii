@@ -1,10 +1,11 @@
 <?php
 
-namespace AM\SMS;
+namespace AM\Gnokii;
 
 use \Exception;
 use \AM\Gnokii\OutputReader;
 use \DateTime;
+use \AM\SMS\SMS;
 
 class PhpGnokii
     {
@@ -211,12 +212,12 @@ class PhpGnokii
 						    } //end foreach
 
 						$sms        = $this->_combineMessages($messages, $memorytype);
-						$smsarray[] = $sms;
+						$smsarray[] = new SMS($sms);
 					    }
 					else if ($message["linked"] === false)
 					    {
 						$sms        = $this->_createSms($message, $memorytype);
-						$smsarray[] = $sms;
+						$smsarray[] = new SMS($sms);
 					    } //end if
 
 				    } //end if
@@ -301,8 +302,10 @@ class PhpGnokii
 
 	private function _createSms(array $message, string $memorytype):array
 	    {
+		$datetime = new DateTime($message["datetime"]);
+
 		return [
-		    "datetime"  => new DateTime($message["datetime"]),
+		    "datetime"  => ["date" => $datetime->format("Y-m-d H:i:s.u"), "timezone" => $datetime->format("P")],
 		    "text"      => $message["text"],
 		    "memory"    => ["type" => $memorytype, "slots" => $this->_getSlots($message["locations"])],
 		    "sender"    => $message["sender"],

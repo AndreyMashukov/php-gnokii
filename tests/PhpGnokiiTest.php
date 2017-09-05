@@ -2,10 +2,12 @@
 
 namespace Tests;
 
-use \AM\SMS\PhpGnokii;
+use \AM\Gnokii\PhpGnokii;
 use \PHPUnit\Framework\TestCase;
 use \Exception;
 use \DateTime;
+use \DateTimeZone;
+use \AM\SMS\SMS;
 
 /**
  * @runTestsInSeparateProcesses
@@ -120,23 +122,23 @@ class PhpGnokiiTest extends TestCase
 		$phpgnokii = new PhpGnokii();
 
 		$expected   = [];
-		$expected[] = [
-		    "datetime"  => new DateTime("02/09/2017 08:40:07 +0300"),
+		$expected[] = new SMS([
+		    "datetime"  => ["date" => "02/09/2017 08:40:07", "timezone" => "+0300"],
 		    "text"      => "You balance is 200$",
 		    "memory"    => ["type" => "ME", "slots" => [0]],
 		    "sender"    => "Provider",
 		    "multipart" => false,
 		    "read"      => true,
-		];
+		]);
 
-		$expected[] = [
-		    "datetime"  => new DateTime("04/09/2017 14:17:31 +0700"),
+		$expected[] = new SMS([
+		    "datetime"  => ["date" => "04/09/2017 14:17:31", "timezone" => "+0700"],
 		    "text"      => "Message part in first message and second part of message",
 		    "memory"    => ["type" => "ME", "slots" => [8, 9]],
 		    "sender"    => "+79526191914",
 		    "multipart" => true,
 		    "read"      => false,
-		];
+		]);
 
 		$messages = $phpgnokii->getSms("ME");
 		$this->assertEquals($expected, $messages);
