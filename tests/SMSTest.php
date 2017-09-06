@@ -54,8 +54,8 @@ class SMSTest extends TestCase
 		    {
 			$array = json_decode(file_get_contents(__DIR__ . "/sms/" . $i . ".json"), true);
 			$sms   = new SMS($array);
-			$datetime = new DateTime($array["datetime"]["date"], new DateTimeZone($array["datetime"]["timezone"]));
 
+			$datetime          = new DateTime($array["datetime"]["date"], new DateTimeZone($array["datetime"]["timezone"]));
 			$array["datetime"] = $datetime->setTimezone(new DateTimeZone("UTC"));
 
 			$this->assertEquals((string) $sms, json_encode($array));

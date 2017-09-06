@@ -40,6 +40,19 @@ then
 	echo Getting SMS failed \(location $5 from $4 memory\)! \(The given location is empty.\)
 	exit 1
     fi
+elif [ "$3" = "--deletesms" ]
+then
+    if [ "$5" != "2" ] && [ "$6" != "2" ]
+    then
+	i=$5
+	step=1
+	while [ "$i" -lt "$6" ] || [ "$i" == "$6" ]
+	do
+	    echo Deleted SMS \(location "$i" from memory $4\)
+	    i=$((i+step))
+	done
+	exit 0
+    fi
 fi
 
 exit 0

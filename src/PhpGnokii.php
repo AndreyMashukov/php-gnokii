@@ -337,6 +337,49 @@ class PhpGnokii
 	    } //end _getSlots()
 
 
+	/**
+	 * Delete sms
+	 *
+	 * @param SMS $sms SMS to delete
+	 *
+	 * @return bool True if gnokii give correct answer
+	 */
+
+	public function deleteSMS(SMS $sms):bool
+	    {
+		exec(GNOKII_COMMAND . " --config " . $this->_config . " --deletesms " . $sms->memory["type"] . " " .
+		    $sms->memory["intervals"]["start"] . " " . $sms->memory["intervals"]["end"], $output, $result);
+
+		$expected = [
+		    "/GNOKII\s+Version\s+[0-9]{1}\.[0-9]{1,2}\.[0-9]{1,2}/ui",
+		];
+
+		foreach ($sms->memory["slots"] as $slot)
+		    {
+			$expected[] = "/Deleted\s+SMS\s+\(location\s+" . $slot . "\s+from\s+memory\s+" . $sms->memory["type"] . "\)/ui";
+		    } //end foreach
+
+		for ($i = 0; $i <= (count($expected) - 1); $i++)
+		    {
+			if (isset($output[$i]) === true)
+			    {
+				if (preg_match($expected[$i], trim($output[$i])) === 0)
+				    {
+					return false;
+				    } //end if
+
+			    }
+			else
+			    {
+				return false;
+			    } //end if
+
+		    } //end for
+
+		return true;
+	    } //end deleteSMS()
+
+
     } //end class
 
 

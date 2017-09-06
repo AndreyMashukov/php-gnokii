@@ -149,6 +149,32 @@ class PhpGnokiiTest extends TestCase
 	    } //end  testShouldGetSmsFromDeviceMemory()
 
 
+	/**
+	 * Should allow to delete message from device
+	 *
+	 * @return void
+	 */
+
+	public function testShouldAllowToDeleteMessageFromDevice()
+	    {
+		$messages[] = new SMS(json_decode(file_get_contents(__DIR__ . "/sms/1.json"), true));
+		$messages[] = new SMS(json_decode(file_get_contents(__DIR__ . "/sms/2.json"), true));
+
+		define("GNOKII_COMMAND", "sh " . __DIR__ . "/mock/mock.sh");
+		define("SMSC_NUMBER", "+79043490000");
+
+		$phpgnokii = new PhpGnokii();
+		foreach ($messages as $message)
+		    {
+			$this->assertTrue($phpgnokii->deleteSMS($message));
+		    } //end foreach
+
+		$message = new SMS(json_decode(file_get_contents(__DIR__ . "/sms/systemdown.json"), true));
+
+		$this->assertFalse($phpgnokii->deleteSMS($message));
+	    } //end testShouldAllowToDeleteMessageFromDevice()
+
+
     } //end class
 
 
