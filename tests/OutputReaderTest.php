@@ -96,6 +96,7 @@ class OutputReaderTest extends TestCase
 		$result = $reader->read($output);
 		$this->assertEquals($expected, $result);
 
+		$this->assertEquals([], $reader->read(""));
 	    } //end testShouldReadCliGnokiiOutput()
 
 

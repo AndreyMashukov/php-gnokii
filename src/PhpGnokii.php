@@ -281,7 +281,15 @@ class PhpGnokii
 		    {
 			$reader  = new OutputReader("getsms");
 			$message = $reader->read(implode("\n", $output));
-			return $message;
+			if (count($message) > 0)
+			    {
+				return $message;
+			    }
+			else
+			    {
+				return false;
+			    } //end if
+
 		    }
 		else
 		    {
