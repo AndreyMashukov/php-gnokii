@@ -250,13 +250,17 @@ class PhpGnokii
 
 		foreach ($messages as $message)
 		    {
-			$part = $this->_createSms($message, $memorytype);
-			$sms["text"]     .= $part["text"];
-			unset($part["text"]);
-			foreach ($part as $key => $value)
+			if ($message !== false)
 			    {
-				$sms[$key] = $value;
-			    } //end foreach
+				$part = $this->_createSms($message, $memorytype);
+				$sms["text"]     .= $part["text"];
+				unset($part["text"]);
+				foreach ($part as $key => $value)
+				    {
+					$sms[$key] = $value;
+				    } //end foreach
+
+			    } //end if
 
 		    } //end foreach
 

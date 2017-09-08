@@ -17,6 +17,11 @@ then
 	echo You balance is 200\$
 	exit 0
     fi
+    if [ "$5" = "2" ]
+    then
+	echo 0. Invalid output... boom...
+	exit 0
+    fi
     if [ "$5" = "8" ]
     then
 	echo 8. Inbox Message \(Unread\)
